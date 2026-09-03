@@ -7,8 +7,6 @@ contrastive local learning. Networks are defined as parameterized circuits and a
 directly in **SPICE** (ngspice). This repository provides the network definitions, trainers, trained
 results, and the figure-generation code for the tasks in the manuscript.
 
-For correspondence: pragyanpandey05@berkeley.edu.
-
 ## Layout
 
 ```
