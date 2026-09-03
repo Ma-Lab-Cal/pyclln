@@ -1,0 +1,178 @@
+.title xor_nxn_alter_ald1106_diff_output_pnas_fig3A
+.include "device_model/nmos_lvl1_ald1106.lib"
+.subckt e0 t_D t_S
+V1 t_G 0 1.8769947564364386
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e0
+.subckt e1 t_D t_S
+V1 t_G 0 2.2703695565452620
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e1
+.subckt e2 t_D t_S
+V1 t_G 0 1.2272618472823609
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e2
+.subckt e3 t_D t_S
+V1 t_G 0 1.7770690129941575
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e3
+.subckt e4 t_D t_S
+V1 t_G 0 2.7323673858691366
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e4
+.subckt e5 t_D t_S
+V1 t_G 0 2.7407327223335951
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e5
+.subckt e6 t_D t_S
+V1 t_G 0 0.8139632761595906
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e6
+.subckt e7 t_D t_S
+V1 t_G 0 1.0181071953454670
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e7
+.subckt e8 t_D t_S
+V1 t_G 0 0.6286680082520747
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e8
+.subckt e9 t_D t_S
+V1 t_G 0 1.6020246091265911
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e9
+.subckt e10 t_D t_S
+V1 t_G 0 0.5746905271964173
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e10
+.subckt e11 t_D t_S
+V1 t_G 0 1.6420830609867778
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e11
+.subckt e12 t_D t_S
+V1 t_G 0 2.1228601190369019
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e12
+.subckt e13 t_D t_S
+V1 t_G 0 1.1962182066199383
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e13
+.subckt e14 t_D t_S
+V1 t_G 0 2.1906372549503281
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e14
+.subckt e15 t_D t_S
+V1 t_G 0 1.9771570435408772
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e15
+.subckt e16 t_D t_S
+V1 t_G 0 0.5599547059429134
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e16
+.subckt e17 t_D t_S
+V1 t_G 0 1.8971352199772049
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e17
+.subckt e18 t_D t_S
+V1 t_G 0 1.1481311172686635
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e18
+.subckt e19 t_D t_S
+V1 t_G 0 1.5377529925251741
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e19
+.subckt e20 t_D t_S
+V1 t_G 0 1.2088127044282968
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e20
+.subckt e21 t_D t_S
+V1 t_G 0 2.2328447957824906
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e21
+.subckt e22 t_D t_S
+V1 t_G 0 1.6011342941768487
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e22
+.subckt e23 t_D t_S
+V1 t_G 0 0.8921693461874082
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e23
+.subckt e24 t_D t_S
+V1 t_G 0 1.8616225450796118
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e24
+.subckt e25 t_D t_S
+V1 t_G 0 2.4507869112784175
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e25
+.subckt e26 t_D t_S
+V1 t_G 0 1.2659088309404494
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e26
+.subckt e27 t_D t_S
+V1 t_G 0 1.0548947098304535
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e27
+.subckt e28 t_D t_S
+V1 t_G 0 1.4699281438891219
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e28
+.subckt e29 t_D t_S
+V1 t_G 0 2.8409591246510759
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e29
+.subckt e30 t_D t_S
+V1 t_G 0 2.9399885561823345
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e30
+.subckt e31 t_D t_S
+V1 t_G 0 2.1809591897820342
+XNMOS t_D t_G t_S 0 NMOSWRAP
+.ends e31
+RS1 11 17 1e12
+RS2 1 18 1e12
+VCLP 17 0 0
+VCLM 18 0 0
+VMINUS 6 0 0.1100000000000000
+VPLUS  8  0 0.3300000000000000
+VV1 16 0 0
+VV2 14 0 0
+X0 1 2 e0
+X1 1 5 e1
+X2 1 4 e2
+X3 1 13 e3
+X4 2 3 e4
+X5 2 6 e5
+X6 2 14 e6
+X7 3 4 e7
+X8 3 7 e8
+X9 3 15 e9
+X10 4 8 e10
+X11 4 16 e11
+X12 5 6 e12
+X13 5 9 e13
+X14 5 8 e14
+X15 6 7 e15
+X16 6 10 e16
+X17 7 8 e17
+X18 7 11 e18
+X19 8 12 e19
+X20 9 10 e20
+X21 9 13 e21
+X22 9 12 e22
+X23 10 11 e23
+X24 10 14 e24
+X25 11 12 e25
+X26 11 15 e26
+X27 12 16 e27
+X28 13 14 e28
+X29 13 16 e29
+X30 14 15 e30
+X31 15 16 e31
+.options klu
+.options TEMP = 27C
+.options TNOM = 27C
+.options itl1=40 itl2=40 itl4=6 itl5=60
+.options gmin=1e-8 reltol=5e-3 abstol=1e-8 vntol=1e-5
+.options rshunt=1e9
+.op
+.end

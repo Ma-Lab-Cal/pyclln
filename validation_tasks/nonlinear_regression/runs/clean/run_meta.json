@@ -1,0 +1,31 @@
+{
+  "task": "nonlinear_regression",
+  "run": "clean",
+  "condition": "clean",
+  "metric": "test_mse",
+  "result": {
+    "test_mse": 1.71e-05
+  },
+  "hyperparameters": {
+    "rule": "contrastive coupled learning (free solve -> output nudged by eta toward target -> contrastive gate update)",
+    "gamma": 0.4,
+    "eta": 1.0,
+    "clamp_res_ohm": 0.01,
+    "vminus": 0.0,
+    "vplus": 0.45,
+    "vg_init": "3.0 V (fixed)",
+    "epochs": 25000,
+    "read_noise_rel": 0.005
+  },
+  "network": {
+    "edges": 32,
+    "device": "NMOS",
+    "structure": "4x4 NMOS input-output fully-connected network, coupled learning; single analog output node.",
+    "topology_file": "reg_solution.npy (reference trained gate vector)"
+  },
+  "noise": null,
+  "artifacts": {
+    "curve": "curve.npz",
+    "gates": "gates.npz"
+  }
+}

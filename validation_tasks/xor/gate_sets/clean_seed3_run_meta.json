@@ -1,0 +1,52 @@
+{
+  "script": "xor/xor_trainer.py",
+  "script_name": "xor_trainer.py",
+  "argv": [
+    "xor/xor_trainer.py",
+    "--side",
+    "4",
+    "--epochs",
+    "10000",
+    "--gamma",
+    "0.3",
+    "--eta",
+    "0.5",
+    "--solver",
+    "klu",
+    "--vminus",
+    "0.11",
+    "--vplus",
+    "0.33",
+    "--vmax",
+    "0.45",
+    "--L0",
+    "-0.087",
+    "--seed",
+    "3"
+  ],
+  "seed": 3,
+  "timestamp": "2026-03-26T13:44:58.785051",
+  "grid_side": 4,
+  "backend": "shared",
+  "solver": "klu",
+  "variant": "xor_nxn_alter_ald1106_pnas_diff_output_fig3A",
+  "epochs": 10000,
+  "gamma": 0.3,
+  "eta": 0.5,
+  "rails": {
+    "vminus": 0.11,
+    "vplus": 0.33
+  },
+  "dataset": {
+    "vmax": 0.45,
+    "L0": -0.087
+  },
+  "node_map": {
+    "ominus": 1,
+    "vminus": 6,
+    "vplus": 8,
+    "oplus": 11,
+    "v2": 14,
+    "v1": 16
+  }
+}

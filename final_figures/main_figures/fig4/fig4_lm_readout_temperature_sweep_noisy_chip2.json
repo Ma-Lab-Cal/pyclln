@@ -1,0 +1,206 @@
+{
+  "source": "paper_release/language_model runs/noisy_chip2 endpoint gates, 13,664-edge / 122-token grammar (123 symbols incl. <BOS>)",
+  "gates_file": "../../../language_model/runs/noisy_chip2/gates.npz",
+  "run": "noisy_chip2",
+  "final_epoch": 12,
+  "selected_temp": 0.0006,
+  "training_temp": 0.0025,
+  "num_samples": 1000,
+  "repeats": 5,
+  "noise_enabled": true,
+  "noise_model": "1x device mismatch: VTO sigma 10 mV + drive-strength sigma 0.5% (fixed chip fingerprint) + read noise sigma 2.25 mV",
+  "generation_protocol": "autoregressive next-token sampling at the readout temperature on real ngspice .op free solves",
+  "solver": "ngspice .op free solve (same path as the clean run)",
+  "unique_contexts_solved": 124897,
+  "points": [
+    {
+      "temperature": 0.0001,
+      "valid_pct": 99.82,
+      "valid_pct_std": 0.14696938456699082,
+      "novelty_pct": 62.03999999999999,
+      "novelty_pct_std": 1.1603447763488242,
+      "uniqueness_pct": 76.24,
+      "uniqueness_pct_std": 0.6053098380168628
+    },
+    {
+      "temperature": 0.000125,
+      "valid_pct": 99.8,
+      "valid_pct_std": 0.12649110640673528,
+      "novelty_pct": 61.8,
+      "novelty_pct_std": 0.7155417527999334,
+      "uniqueness_pct": 76.06,
+      "uniqueness_pct_std": 0.5083306010855538
+    },
+    {
+      "temperature": 0.00016,
+      "valid_pct": 99.82,
+      "valid_pct_std": 0.14696938456699082,
+      "novelty_pct": 61.82,
+      "novelty_pct_std": 0.8133879763065109,
+      "uniqueness_pct": 75.88000000000001,
+      "uniqueness_pct_std": 0.62417946137309
+    },
+    {
+      "temperature": 0.0002,
+      "valid_pct": 99.78,
+      "valid_pct_std": 0.11661903789690613,
+      "novelty_pct": 61.36000000000001,
+      "novelty_pct_std": 0.8777243302996683,
+      "uniqueness_pct": 76.05999999999999,
+      "uniqueness_pct_std": 0.5571355310873652
+    },
+    {
+      "temperature": 0.00025,
+      "valid_pct": 99.74000000000001,
+      "valid_pct_std": 0.12000000000000009,
+      "novelty_pct": 61.82000000000001,
+      "novelty_pct_std": 1.0303397497913016,
+      "uniqueness_pct": 76.44000000000001,
+      "uniqueness_pct_std": 0.3136877428271627
+    },
+    {
+      "temperature": 0.00032,
+      "valid_pct": 99.72000000000001,
+      "valid_pct_std": 0.11661903789690611,
+      "novelty_pct": 62.339999999999996,
+      "novelty_pct_std": 1.0248902380255176,
+      "uniqueness_pct": 76.32,
+      "uniqueness_pct_std": 0.23151673805580472
+    },
+    {
+      "temperature": 0.0004,
+      "valid_pct": 99.66000000000001,
+      "valid_pct_std": 0.1019803902718558,
+      "novelty_pct": 61.7,
+      "novelty_pct_std": 0.6782329983125274,
+      "uniqueness_pct": 76.32000000000001,
+      "uniqueness_pct_std": 0.2785677655436826
+    },
+    {
+      "temperature": 0.0005,
+      "valid_pct": 99.68,
+      "valid_pct_std": 0.07483314773547889,
+      "novelty_pct": 61.88,
+      "novelty_pct_std": 0.5192301994298872,
+      "uniqueness_pct": 76.66000000000001,
+      "uniqueness_pct_std": 0.2576819745345027
+    },
+    {
+      "temperature": 0.0006,
+      "valid_pct": 99.70000000000002,
+      "valid_pct_std": 0.10954451150103331,
+      "novelty_pct": 62.7,
+      "novelty_pct_std": 0.9736529155710476,
+      "uniqueness_pct": 76.92,
+      "uniqueness_pct_std": 0.42614551505325066
+    },
+    {
+      "temperature": 0.00075,
+      "valid_pct": 99.62,
+      "valid_pct_std": 0.1326649916142161,
+      "novelty_pct": 62.64000000000001,
+      "novelty_pct_std": 0.6590902821313639,
+      "uniqueness_pct": 77.06,
+      "uniqueness_pct_std": 0.1356465996625055
+    },
+    {
+      "temperature": 0.0009,
+      "valid_pct": 99.60000000000001,
+      "valid_pct_std": 0.10954451150103331,
+      "novelty_pct": 63.480000000000004,
+      "novelty_pct_std": 0.8518215775618749,
+      "uniqueness_pct": 77.78000000000002,
+      "uniqueness_pct_std": 0.40199502484483596
+    },
+    {
+      "temperature": 0.0011,
+      "valid_pct": 99.46000000000001,
+      "valid_pct_std": 0.21540659228538034,
+      "novelty_pct": 63.459999999999994,
+      "novelty_pct_std": 0.8957678270623484,
+      "uniqueness_pct": 78.58000000000001,
+      "uniqueness_pct_std": 0.3310589071449373
+    },
+    {
+      "temperature": 0.00135,
+      "valid_pct": 99.06,
+      "valid_pct_std": 0.3136877428271627,
+      "novelty_pct": 64.4,
+      "novelty_pct_std": 0.8921883209278192,
+      "uniqueness_pct": 79.54,
+      "uniqueness_pct_std": 0.6216108107168027
+    },
+    {
+      "temperature": 0.0016,
+      "valid_pct": 98.80000000000001,
+      "valid_pct_std": 0.36331804249169936,
+      "novelty_pct": 64.78,
+      "novelty_pct_std": 0.9826494797230606,
+      "uniqueness_pct": 80.7,
+      "uniqueness_pct_std": 0.40000000000000036
+    },
+    {
+      "temperature": 0.002,
+      "valid_pct": 97.77999999999999,
+      "valid_pct_std": 0.6305553108173784,
+      "novelty_pct": 67.82000000000001,
+      "novelty_pct_std": 0.6675327707311425,
+      "uniqueness_pct": 81.87999999999998,
+      "uniqueness_pct_std": 0.3310589071449373
+    },
+    {
+      "temperature": 0.0025,
+      "valid_pct": 95.96000000000001,
+      "valid_pct_std": 0.5122499389946283,
+      "novelty_pct": 71.12,
+      "novelty_pct_std": 1.0870142593360963,
+      "uniqueness_pct": 83.36,
+      "uniqueness_pct_std": 0.3136877428271627
+    },
+    {
+      "temperature": 0.0032,
+      "valid_pct": 90.60000000000001,
+      "valid_pct_std": 0.7924645102463588,
+      "novelty_pct": 74.46,
+      "novelty_pct_std": 1.284678948220139,
+      "uniqueness_pct": 85.01999999999998,
+      "uniqueness_pct_std": 0.667532770731146
+    },
+    {
+      "temperature": 0.004,
+      "valid_pct": 78.66,
+      "valid_pct_std": 0.5083306010855538,
+      "novelty_pct": 79.72,
+      "novelty_pct_std": 0.3544009029333873,
+      "uniqueness_pct": 88.04,
+      "uniqueness_pct_std": 0.6086049621881181
+    },
+    {
+      "temperature": 0.005,
+      "valid_pct": 57.81999999999999,
+      "valid_pct_std": 1.081480466767663,
+      "novelty_pct": 86.34,
+      "novelty_pct_std": 0.7838367176906176,
+      "uniqueness_pct": 91.82000000000001,
+      "uniqueness_pct_std": 0.19390719429665332
+    },
+    {
+      "temperature": 0.0064,
+      "valid_pct": 29.68,
+      "valid_pct_std": 1.746310396235446,
+      "novelty_pct": 92.14,
+      "novelty_pct_std": 0.8212186067059133,
+      "uniqueness_pct": 96.05999999999997,
+      "uniqueness_pct_std": 0.6374950980203696
+    },
+    {
+      "temperature": 0.008,
+      "valid_pct": 13.28,
+      "valid_pct_std": 1.2155657119218193,
+      "novelty_pct": 96.06,
+      "novelty_pct_std": 0.6151422599691885,
+      "uniqueness_pct": 98.46000000000001,
+      "uniqueness_pct_std": 0.4454211490264022
+    }
+  ]
+}

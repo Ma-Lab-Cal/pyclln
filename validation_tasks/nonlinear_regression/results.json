@@ -1,0 +1,29 @@
+{
+ "task": "Nonlinear 1-D regression (4x4 NMOS input-output fully-connected network, coupled learning)",
+ "metric": "test MSE",
+ "runs": {
+  "clean": {
+   "test_mse": 1.71e-05
+  },
+  "noisy_chip1": {
+   "test_mse": 8.57e-05
+  },
+  "noisy_chip2": {
+   "test_mse": 0.000123
+  },
+  "noisy_chip3": {
+   "test_mse": 1.81e-05
+  }
+ },
+ "headline": "clean MSE ~1.7e-5; 3 device-mismatch chips (1x model) stay same-order (noise adds a modest error floor)",
+ "hyperparameters": {
+  "gamma": 0.4,
+  "eta": 1.0,
+  "clamp_res_ohm": 0.01,
+  "vminus": 0.0,
+  "vplus": 0.45
+ },
+ "noise_model": "1x device-mismatch model: per-device VTO offset (sigma 10 mV) + per-device drive-strength/kp factor (sigma 0.5%), fixed per chip (shipped as chip_1/2/3.npz, data only); free & clamp independently mismatched; plus read noise (sigma = 0.5% of the input full scale).",
+ "validation": "ngspice DC operating-point solve (free + clamped phases)",
+ "data_layout": "runs/{clean,noisy_chip1,noisy_chip2,noisy_chip3}/ each with run_meta.json + curve.npz + gates.npz (+ chip.npz for noisy)"
+}

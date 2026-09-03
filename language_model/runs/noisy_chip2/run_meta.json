@@ -1,0 +1,47 @@
+{
+  "task": "language_model",
+  "run": "noisy_chip2",
+  "condition": "noisy",
+  "metric": "valid_string_rate",
+  "result": {
+    "valid_rate": 0.997,
+    "endpoint_epoch": 12
+  },
+  "hyperparameters": {
+    "rule": "contrastive coupled learning (free solve -> soft cross-entropy clamp -> contrastive gate update)",
+    "gamma": 0.1,
+    "onehot_gamma": 0.1,
+    "delta": 0.035,
+    "rs_clamp_ohm": 0.01,
+    "temp_train": 0.0025,
+    "temp_readout": 0.0006,
+    "epochs": 12,
+    "batch": 1,
+    "vg_init": "Uniform(2.5,5.0) V, clip [0.4,8.0]",
+    "input": "7-token context x 16-D SciBERT-FA embedding = 112 gate inputs, applied as source voltages in [0.0,0.45] V (no analog front end)",
+    "data": "self-valid quantum-physics corpus (4 grammatical shapes incl. questions), windowed into 7-token contexts; held-out split for the test metrics",
+    "read_noise_sigma_V": 0.00225
+  },
+  "network": {
+    "edges": 13664,
+    "branches": 122,
+    "gate_inputs": 112,
+    "vocab_size": 123,
+    "device": "NMOS",
+    "structure": "input-output fully-connected NMOS network: 122 output branches x 112 gate inputs; branch drain voltages read as next-token logits via masked softmax (123 symbols = 122 tokens + masked <BOS>; temperature readout)",
+    "topology_file": "topology.npz"
+  },
+  "noise": {
+    "model": "1x device mismatch + read noise",
+    "vth_sigma_V": 0.01,
+    "beta_sigma": 0.005,
+    "note": "per-device threshold-voltage mismatch (sigma=10 mV) and per-device drive-strength (kp) mismatch (sigma=0.5%), fixed per chip; free and clamp are electrically-separate device sets; plus a Gaussian read-noise stream on every measurement (training and inference).",
+    "chip_index": 2,
+    "chip_file": "../../chips/chip_2.npz"
+  },
+  "artifacts": {
+    "curve": "curve.npz",
+    "gates": "gates.npz",
+    "chip": "../../chips/chip_2.npz"
+  }
+}

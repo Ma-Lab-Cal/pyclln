@@ -1,0 +1,57 @@
+{
+    "seed": 0,
+    "timestamp": "2026-07-17T16:28:49.895238",
+    "dataset": "ionosphere",
+    "input_shape": [
+        34
+    ],
+    "test_count": 71,
+    "gamma": 4.0,
+    "margin": 0.01,
+    "delta": 0.01,
+    "epochs": 50,
+    "input_vmin": -1.0,
+    "input_vmax": 1.0,
+    "rails": {
+        "vminus": 0.0,
+        "vplus": 0.101
+    },
+    "solver": "klu",
+    "body_tie": "floating",
+    "gate_ref": "drain",
+    "loss_type": "hinge",
+    "body_res": 0.01,
+    "rs_clamp": 0.01,
+    "vg_init": {
+        "mode": "fixed",
+        "fixed": 2.0
+    },
+    "device": {
+        "mode": "subckt",
+        "include_path": "clln_ionosphere/device_model/nmos_lvl1_ald1106.lib",
+        "model": "ncg",
+        "subckt": "NMOSWRAP",
+        "swap_ds": false
+    },
+    "topology": {
+        "path": "clln_ionosphere/topologies/topo_1oo_sparse.npz",
+        "Nin": 34,
+        "out": 2,
+        "edges": 147,
+        "meta": {
+            "note": "single_oo_edge_sparse_uniform_ih",
+            "label": "struct_g3.0_ep39",
+            "active_edges": 125,
+            "strategy": "structured",
+            "n_inp_hid": 45,
+            "kept_oo": "200->201",
+            "derived_from": "topo_struct_g3.0_ep39",
+            "input_hidden": "sparse uniform: each input -> 2 hidden (round-robin, label-independent)"
+        }
+    },
+    "diagnostics": {
+        "vout_saved": "test"
+    },
+    "diode_source_to_vplus": false,
+    "input_scale": 0.8
+}

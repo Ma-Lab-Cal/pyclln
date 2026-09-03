@@ -1,0 +1,20 @@
+{
+  "source": "language_model/runs/clean/gates.npz",
+  "shape": [
+    122,
+    112
+  ],
+  "edges": 13664,
+  "final_epoch": null,
+  "n": 13664,
+  "min": 0.4,
+  "mean": 3.3841755905117727,
+  "median": 3.38788024021236,
+  "max": 7.99965765471478,
+  "std": 0.8852349318168895,
+  "bins": 48,
+  "figure_size_in": [
+    2.12,
+    1.78
+  ]
+}

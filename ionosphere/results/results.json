@@ -1,0 +1,39 @@
+{
+  "headline": {
+    "clean_test_acc": 0.9718,
+    "noisy_test_acc_per_chip": [
+      0.9577,
+      0.9577,
+      0.9437
+    ],
+    "note": "All four runs evaluated at the SAME round endpoint (epoch 50). clean = ep50 endpoint network (deterministic, 69/71, >97%). noisy = 3 chips at ep50 (68/71, 68/71, 67/71 = two >95%, one >94%), each under its fixed device-mismatch + read-noise condition, identical in training and inference. Reproducible by re-running with the same seeds."
+  },
+  "recipe": {
+    "gamma": 4.0,
+    "delta": 0.01,
+    "margin": 0.01,
+    "vg_init": 2.0,
+    "input_scale": 0.8,
+    "meas_rel": 0.005,
+    "epochs": 50,
+    "loss": "hinge",
+    "reporting": "endpoint (epoch 50)",
+    "network": "34-input, 5-hidden, 2-output NMOS input-output fully-connected network (147 edges), gate-to-drain, floating body, no supply rail (driven by the 34 input sources)",
+    "read_noise": "Gaussian sigma = 0.5% of the input full-scale, on every measurement (training and inference)",
+    "mismatch": "1x: per-device VTO offset sigma=10 mV + drive-strength (kp) sigma=0.5%; free and clamp independently mismatched"
+  },
+  "noisy": {
+    "chips": [
+      "chip_1.npz",
+      "chip_2.npz",
+      "chip_3.npz"
+    ],
+    "per_chip_test_acc": [
+      0.9577,
+      0.9577,
+      0.9437
+    ],
+    "note": "each chip = a fixed 1x device-mismatch fingerprint + read noise; deployed (free-phase) test accuracy at ep50"
+  },
+  "curve": "results/curve_clean.npz (per-step, to ep50); plot results/curves.png"
+}

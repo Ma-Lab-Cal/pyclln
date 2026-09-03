@@ -1,0 +1,22 @@
+{
+  "task": "ionosphere",
+  "loss": "hinge",
+  "endpoint_test_acc": 0.971830985915493,
+  "test_loss": 0.0010567671548270415,
+  "train_acc": 0.9642857142857143,
+  "train_loss": 0.0011752179753565081,
+  "endpoint_epoch": 50,
+  "epochs": 50,
+  "gamma": 4.0,
+  "delta": 0.01,
+  "margin": 0.01,
+  "soft_t": "",
+  "mse_target": "",
+  "init_mean": "",
+  "init_half_spread": "",
+  "vg_init": 2.0,
+  "body_tie": "floating",
+  "gate_ref": "drain",
+  "input_range": "+-0.8 V",
+  "status": "ok"
+}

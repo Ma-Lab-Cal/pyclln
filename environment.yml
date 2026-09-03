@@ -1,0 +1,16 @@
+# One-command reproducible environment:
+#     conda env create -f environment.yml
+#     conda activate clln
+#
+# Creates the `clln` env with Python 3.11, the native ngspice engine (libngspice, which PySpice
+# binds to), and all pinned Python dependencies from requirements.txt. ngspice comes from
+# conda-forge so no separate system install is needed.
+name: clln
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - ngspice=41          # native SPICE engine + libngspice (PySpice binds to this shared library)
+  - pip
+  - pip:
+      - -r requirements.txt

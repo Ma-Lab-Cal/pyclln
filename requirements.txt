@@ -1,0 +1,20 @@
+# Tested, pinned Python environment (Python 3.11).
+#
+# PySpice drives the native **ngspice** shared library (libngspice); ngspice is NOT a pip
+# package. Install it via the bundled conda environment.yml (recommended, one command) or your
+# system package manager (see README "Installation"). Tested against ngspice 41.
+# PySpice 1.5 prints "Unsupported Ngspice version 41" on import -- harmless.
+numpy==2.3.1
+scipy==1.16.0
+scikit-learn==1.7.2
+matplotlib==3.10.3
+Pillow==11.3.0
+networkx==3.5
+PySpice==1.5
+# torch is used by the scikit-digits trainer for the gate-init RNG (torch.Generator); pinned so the
+# exact shipped initial gates reproduce. The init range U(0.5, 4.5) V is what matters physically;
+# only the exact random draw is torch-version-sensitive.
+torch==2.11.0
+# transformers is only used by language_model/embeddings/build_embeddings.py to regenerate the
+# SciBERT sentence embeddings. Training/inference load the shipped embeddings and do not need it.
+transformers==4.44.2

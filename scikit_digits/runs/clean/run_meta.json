@@ -1,0 +1,33 @@
+{
+  "task": "scikit_digits",
+  "run": "clean",
+  "condition": "clean",
+  "metric": "test_accuracy",
+  "result": {
+    "test_acc": 0.9806,
+    "endpoint_epoch": 15,
+    "untrained_acc": 0.1361
+  },
+  "hyperparameters": {
+    "rule": "contrastive coupled learning (free solve -> multiclass hinge clamp -> contrastive gate update)",
+    "gamma": 1.0,
+    "delta": 0.05,
+    "margin": 0.02,
+    "rs_clamp_ohm": 0.01,
+    "vg_init": "Uniform(0.5,4.5) V, seed 0, clip [0.4,8.0]",
+    "input": "pixels scaled to [0,1] V, applied directly as node voltages (no front end)",
+    "data": "seed-0 stratified 80/20 split (1437 train / 360 test)",
+    "read_noise_rel": 0.005
+  },
+  "network": {
+    "edges": 1247,
+    "device": "NMOS",
+    "structure": "64 pixel inputs x 20 differential rails (10 classes x {+,-}); score_c = V(c+)-V(c-)",
+    "topology_file": "topology_1247.npz"
+  },
+  "noise": null,
+  "artifacts": {
+    "curve": "curve.npz",
+    "gates": "gates.npz"
+  }
+}

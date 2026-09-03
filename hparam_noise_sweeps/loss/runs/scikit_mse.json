@@ -1,0 +1,22 @@
+{
+  "task": "scikit",
+  "loss": "mse",
+  "endpoint_test_acc": 0.9194444444444444,
+  "test_loss": 0.006783276690078983,
+  "train_acc": 0.9352818371607515,
+  "train_loss": 0.0052489405324524585,
+  "endpoint_epoch": 15,
+  "epochs": 15,
+  "gamma": 2.0,
+  "delta": 0.1,
+  "margin": 0.02,
+  "soft_t": "",
+  "mse_target": 0.5,
+  "init_mean": 5.0,
+  "init_half_spread": 3.0,
+  "vg_init": "",
+  "body_tie": "drain",
+  "gate_ref": "ground",
+  "input_range": "[0,1] V",
+  "status": "ok"
+}

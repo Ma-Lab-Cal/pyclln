@@ -1,0 +1,76 @@
+{
+ "task": "scikit-digits (sklearn 8x8 handwritten digits, 10 classes)",
+ "headline": {
+  "test_acc_clean": 0.9806,
+  "test_acc_noisy": 0.9694,
+  "note": "noisy = 1x device-mismatch model (per-device VTO 10mV + BETA 0.5%) + read noise; 3 chips each 0.9694 test accuracy at a fixed 30-epoch budget (evaluated at the endpoint, epoch 30), mean 0.9694",
+  "stopping": "clean run reported at the endpoint of its fixed 15-epoch budget (0.9806); noisy runs reported at the endpoint of a fixed 30-epoch budget (0.9694 each)"
+ },
+ "network": {
+  "edges": 1247,
+  "structure": "64 pixel inputs x 20 output rails (10 classes x {+,-}), differential readout: score_c = V(rail c+) - V(rail c-)",
+  "device": "NMOS, drain at the pixel node, source at the rail, gate = learned weight (referenced to ground), body tied to the drain node",
+  "file": "topology_1247.npz"
+ },
+ "training": {
+  "rule": "per-sample contrastive coupled learning, strict SGD: free solve -> multiclass hinge -> clamp true/rival rail pairs by +-delta/2 -> contrastive gate update",
+  "recipe": {
+   "gamma": 1.0,
+   "delta": 0.05,
+   "margin": 0.02,
+   "rs_clamp_ohm": 0.01
+  },
+  "init": "vg ~ Uniform(0.5, 4.5) V, seed 0, clip [0.4, 8.0] V",
+  "chance_start": {
+   "untrained_acc_clean": 0.1361,
+   "untrained_acc_noisy": 0.1454
+  },
+  "data": "seed-0 stratified 80/20 split (1437 train / 360 test), pixels scaled to [0,1] V and applied directly as node voltages (no front-end)",
+  "simulator": "end-to-end ngspice .op solves (training, evaluation, and inference all in-circuit)"
+ },
+ "noise_model": {
+  "device_mismatch": "1x model: per-device VTO offset (sigma 10 mV) AND per-device BETA/kp strength multiplier 1+eps (sigma 0.5%); free/clamp are electrically separate copies with independent devices (2E rule); a chip = its fingerprint (vto_free/vto_clamp + beta_free/beta_clamp), shipped as chip_1/2/3.npz",
+  "read_noise": "Gaussian sigma = 5 mV (0.5% of the 1.0 V input full scale) on every measurement, training AND inference",
+  "protocol": "noisy training with noisy per-epoch evaluation; fixed 30-epoch budget, reported at the endpoint (epoch 30)"
+ },
+ "runs": {
+  "clean": {
+   "untrained": 0.1361,
+   "test_acc": 0.9806,
+   "epoch": 15,
+   "evaluation": "fixed 15-epoch budget (endpoint)",
+   "archive": "run_clean_gates.npz"
+  },
+  "chip_1": {
+   "untrained": 0.1417,
+   "test_acc": 0.9694,
+   "epoch": 30,
+   "archive": "run_chip1_gates.npz",
+   "fingerprint": "chip_1.npz",
+   "evaluation": "fixed 30-epoch budget (endpoint)"
+  },
+  "chip_2": {
+   "untrained": 0.1417,
+   "test_acc": 0.9694,
+   "epoch": 30,
+   "archive": "run_chip2_gates.npz",
+   "fingerprint": "chip_2.npz",
+   "evaluation": "fixed 30-epoch budget (endpoint)"
+  },
+  "chip_3": {
+   "untrained": 0.1417,
+   "test_acc": 0.9694,
+   "epoch": 30,
+   "archive": "run_chip3_gates.npz",
+   "fingerprint": "chip_3.npz",
+   "evaluation": "fixed 30-epoch budget (endpoint)"
+  },
+  "archive_format": "vg_final (endpoint gates), vg0/acc0 (untrained baseline), acc_epochs (per-epoch test acc), endpoint acc (at15 clean / at30 noisy), drain/source; noisy archives also carry the chip fingerprint (vto_*/beta_*)",
+  "inference_note": "deployment inference (5 fresh-read draws at the endpoint gates) reproducible via infer_scikit.py"
+ },
+ "curves": {
+  "clean_per_update": "updcurve_clean.npz \u2014 train_acc, train_loss, test_acc, test_loss after EVERY applied gate update (index 0 = untrained), plus epoch, sample; 3422 points; enough to reconstruct the full clean training curves",
+  "chips_per_epoch": "acc_epochs array inside each run_chip{1,2,3}_gates.npz (per-epoch test accuracy)"
+ },
+ "date": "2026-07-28"
+}

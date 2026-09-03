@@ -1,0 +1,41 @@
+{
+  "task": "scikit_digits",
+  "run": "noisy_chip3",
+  "condition": "noisy",
+  "metric": "test_accuracy",
+  "result": {
+    "test_acc": 0.9694,
+    "epoch": 30,
+    "evaluation": "fixed 30-epoch budget, reported at endpoint (epoch 30)"
+  },
+  "hyperparameters": {
+    "rule": "contrastive coupled learning (free solve -> multiclass hinge clamp -> contrastive gate update)",
+    "gamma": 1.0,
+    "delta": 0.05,
+    "margin": 0.02,
+    "rs_clamp_ohm": 0.01,
+    "vg_init": "Uniform(0.5,4.5) V, seed 0, clip [0.4,8.0]",
+    "input": "pixels scaled to [0,1] V, applied directly as node voltages (no front end)",
+    "data": "seed-0 stratified 80/20 split (1437 train / 360 test)",
+    "read_noise_rel": 0.005
+  },
+  "network": {
+    "edges": 1247,
+    "device": "NMOS",
+    "structure": "64 pixel inputs x 20 differential rails (10 classes x {+,-}); score_c = V(c+)-V(c-)",
+    "topology_file": "topology_1247.npz"
+  },
+  "noise": {
+    "model": "1x device mismatch + read noise",
+    "vth_sigma_V": 0.01,
+    "beta_sigma": 0.005,
+    "note": "per-device threshold-voltage mismatch (sigma=10 mV) and per-device drive-strength (kp) mismatch (sigma=0.5%), fixed per chip; free and clamp are electrically-separate device sets; plus a canonical Gaussian read-noise stream on every measurement (training and inference).",
+    "chip_index": 3,
+    "chip_file": "../../chips/chip_3.npz"
+  },
+  "artifacts": {
+    "curve": "curve.npz",
+    "gates": "gates.npz",
+    "chip": "../../chips/chip_3.npz"
+  }
+}

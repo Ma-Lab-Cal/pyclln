@@ -1,0 +1,671 @@
+{
+  "context_tokens": [
+    "the",
+    "eigenfunction",
+    "shows",
+    "decoherence",
+    "in",
+    "the"
+  ],
+  "corrections": [
+    "dechoerence->decoherence"
+  ],
+  "source": "paper_release/language_model runs/clean endpoint gates; ngspice .op free solve, 122-token grammar (123 symbols incl. <BOS>)",
+  "run": "clean",
+  "temperature": 0.0006,
+  "shown_through_token": "conductor",
+  "shown_tokens_plus_others": [
+    {
+      "token": "condensate",
+      "vocab_index": 89,
+      "probability": 0.3410100529334574
+    },
+    {
+      "token": "ensemble",
+      "vocab_index": 85,
+      "probability": 0.271305445387696
+    },
+    {
+      "token": "insulator",
+      "vocab_index": 92,
+      "probability": 0.17522636007939776
+    },
+    {
+      "token": "lattice",
+      "vocab_index": 84,
+      "probability": 0.1055563877237091
+    },
+    {
+      "token": "medium",
+      "vocab_index": 87,
+      "probability": 0.07953882688481062
+    },
+    {
+      "token": "conductor",
+      "vocab_index": 91,
+      "probability": 0.015025447909503517
+    },
+    {
+      "token": "others",
+      "vocab_index": null,
+      "probability": 0.012337479081425573
+    }
+  ],
+  "rows": [
+    {
+      "token": "<BOS>",
+      "vocab_index": 0,
+      "probability": 0.0
+    },
+    {
+      "token": ".",
+      "vocab_index": 1,
+      "probability": 9.86279824654505e-17
+    },
+    {
+      "token": "?",
+      "vocab_index": 2,
+      "probability": 3.779195392595269e-12
+    },
+    {
+      "token": "the",
+      "vocab_index": 3,
+      "probability": 5.907820400411864e-21
+    },
+    {
+      "token": "a",
+      "vocab_index": 4,
+      "probability": 6.36894014525769e-15
+    },
+    {
+      "token": "an",
+      "vocab_index": 5,
+      "probability": 2.5137267347216805e-15
+    },
+    {
+      "token": "this",
+      "vocab_index": 6,
+      "probability": 9.680366287471922e-15
+    },
+    {
+      "token": "that",
+      "vocab_index": 7,
+      "probability": 7.994061155757538e-24
+    },
+    {
+      "token": "each",
+      "vocab_index": 8,
+      "probability": 6.949629525712114e-18
+    },
+    {
+      "token": "every",
+      "vocab_index": 9,
+      "probability": 2.9183596240356604e-18
+    },
+    {
+      "token": "what",
+      "vocab_index": 10,
+      "probability": 7.737032115947766e-16
+    },
+    {
+      "token": "in",
+      "vocab_index": 11,
+      "probability": 2.5187503546900896e-13
+    },
+    {
+      "token": "of",
+      "vocab_index": 12,
+      "probability": 2.035370354132585e-12
+    },
+    {
+      "token": "is",
+      "vocab_index": 13,
+      "probability": 7.058714039486248e-13
+    },
+    {
+      "token": "has",
+      "vocab_index": 14,
+      "probability": 6.812597320716091e-19
+    },
+    {
+      "token": "shows",
+      "vocab_index": 15,
+      "probability": 1.3459495380127795e-15
+    },
+    {
+      "token": "measures",
+      "vocab_index": 16,
+      "probability": 3.1203232207261235e-17
+    },
+    {
+      "token": "electron",
+      "vocab_index": 17,
+      "probability": 1.4653427618311706e-09
+    },
+    {
+      "token": "photon",
+      "vocab_index": 18,
+      "probability": 1.5008139714336802e-10
+    },
+    {
+      "token": "atom",
+      "vocab_index": 19,
+      "probability": 3.426694935094511e-13
+    },
+    {
+      "token": "qubit",
+      "vocab_index": 20,
+      "probability": 2.034345763805199e-10
+    },
+    {
+      "token": "proton",
+      "vocab_index": 21,
+      "probability": 1.0223349545091349e-09
+    },
+    {
+      "token": "neutron",
+      "vocab_index": 22,
+      "probability": 4.128183264081965e-08
+    },
+    {
+      "token": "muon",
+      "vocab_index": 23,
+      "probability": 2.7880458601492436e-10
+    },
+    {
+      "token": "boson",
+      "vocab_index": 24,
+      "probability": 6.469988138588532e-10
+    },
+    {
+      "token": "fermion",
+      "vocab_index": 25,
+      "probability": 9.73365221829647e-09
+    },
+    {
+      "token": "quark",
+      "vocab_index": 26,
+      "probability": 2.0884580840646293e-11
+    },
+    {
+      "token": "neutrino",
+      "vocab_index": 27,
+      "probability": 3.3005502012393087e-09
+    },
+    {
+      "token": "positron",
+      "vocab_index": 28,
+      "probability": 5.692156543511956e-09
+    },
+    {
+      "token": "hadron",
+      "vocab_index": 29,
+      "probability": 1.451734964217886e-11
+    },
+    {
+      "token": "lepton",
+      "vocab_index": 30,
+      "probability": 1.5726457124287797e-11
+    },
+    {
+      "token": "gluon",
+      "vocab_index": 31,
+      "probability": 4.036035456582911e-13
+    },
+    {
+      "token": "pion",
+      "vocab_index": 32,
+      "probability": 1.513754065422497e-11
+    },
+    {
+      "token": "kaon",
+      "vocab_index": 33,
+      "probability": 3.184916381642168e-11
+    },
+    {
+      "token": "baryon",
+      "vocab_index": 34,
+      "probability": 7.080474617889895e-10
+    },
+    {
+      "token": "meson",
+      "vocab_index": 35,
+      "probability": 5.134192185171517e-09
+    },
+    {
+      "token": "nucleon",
+      "vocab_index": 36,
+      "probability": 2.3353791976521635e-10
+    },
+    {
+      "token": "nucleus",
+      "vocab_index": 37,
+      "probability": 3.1669084159071705e-09
+    },
+    {
+      "token": "ion",
+      "vocab_index": 38,
+      "probability": 3.7095942926418268e-09
+    },
+    {
+      "token": "molecule",
+      "vocab_index": 39,
+      "probability": 2.9882091910673073e-10
+    },
+    {
+      "token": "isotope",
+      "vocab_index": 40,
+      "probability": 9.950200498242593e-11
+    },
+    {
+      "token": "deuteron",
+      "vocab_index": 41,
+      "probability": 3.2080852864968526e-10
+    },
+    {
+      "token": "spin",
+      "vocab_index": 42,
+      "probability": 1.1726461802246546e-13
+    },
+    {
+      "token": "phase",
+      "vocab_index": 43,
+      "probability": 4.565438868908453e-14
+    },
+    {
+      "token": "energy",
+      "vocab_index": 44,
+      "probability": 1.943064579512749e-15
+    },
+    {
+      "token": "basis",
+      "vocab_index": 45,
+      "probability": 3.8436773600640157e-13
+    },
+    {
+      "token": "momentum",
+      "vocab_index": 46,
+      "probability": 2.003234025861134e-13
+    },
+    {
+      "token": "polarization",
+      "vocab_index": 47,
+      "probability": 3.149549315671122e-11
+    },
+    {
+      "token": "helicity",
+      "vocab_index": 48,
+      "probability": 4.205667723312611e-15
+    },
+    {
+      "token": "parity",
+      "vocab_index": 49,
+      "probability": 7.087030382218551e-15
+    },
+    {
+      "token": "charge",
+      "vocab_index": 50,
+      "probability": 3.64406472089286e-15
+    },
+    {
+      "token": "mass",
+      "vocab_index": 51,
+      "probability": 6.630483943621841e-12
+    },
+    {
+      "token": "frequency",
+      "vocab_index": 52,
+      "probability": 4.4783867786797506e-13
+    },
+    {
+      "token": "amplitude",
+      "vocab_index": 53,
+      "probability": 2.8588889591129034e-15
+    },
+    {
+      "token": "wavelength",
+      "vocab_index": 54,
+      "probability": 4.860660214141613e-10
+    },
+    {
+      "token": "coherence",
+      "vocab_index": 55,
+      "probability": 2.9385994007053574e-15
+    },
+    {
+      "token": "entropy",
+      "vocab_index": 56,
+      "probability": 8.28621011813583e-11
+    },
+    {
+      "token": "eigenvalue",
+      "vocab_index": 57,
+      "probability": 7.260361015109001e-13
+    },
+    {
+      "token": "position",
+      "vocab_index": 58,
+      "probability": 2.5948135055453934e-14
+    },
+    {
+      "token": "velocity",
+      "vocab_index": 59,
+      "probability": 9.294595233382934e-15
+    },
+    {
+      "token": "acceleration",
+      "vocab_index": 60,
+      "probability": 1.8335663354028728e-13
+    },
+    {
+      "token": "potential",
+      "vocab_index": 61,
+      "probability": 1.5527244969346581e-12
+    },
+    {
+      "token": "current",
+      "vocab_index": 62,
+      "probability": 2.3819823794291093e-15
+    },
+    {
+      "token": "voltage",
+      "vocab_index": 63,
+      "probability": 2.729894291903599e-13
+    },
+    {
+      "token": "flux",
+      "vocab_index": 64,
+      "probability": 4.245089433623241e-13
+    },
+    {
+      "token": "temperature",
+      "vocab_index": 65,
+      "probability": 4.3027867213948095e-13
+    },
+    {
+      "token": "pressure",
+      "vocab_index": 66,
+      "probability": 4.388619211462625e-14
+    },
+    {
+      "token": "detector",
+      "vocab_index": 67,
+      "probability": 2.5007638391461074e-13
+    },
+    {
+      "token": "measurement",
+      "vocab_index": 68,
+      "probability": 4.356924449050108e-15
+    },
+    {
+      "token": "interferometer",
+      "vocab_index": 69,
+      "probability": 3.8709932500521836e-12
+    },
+    {
+      "token": "polarizer",
+      "vocab_index": 70,
+      "probability": 1.0177519464132492e-13
+    },
+    {
+      "token": "spectrometer",
+      "vocab_index": 71,
+      "probability": 2.305820533299374e-17
+    },
+    {
+      "token": "cavity",
+      "vocab_index": 72,
+      "probability": 1.8492245829144964e-15
+    },
+    {
+      "token": "laser",
+      "vocab_index": 73,
+      "probability": 1.1146173117881024e-12
+    },
+    {
+      "token": "oscilloscope",
+      "vocab_index": 74,
+      "probability": 4.087483723509479e-13
+    },
+    {
+      "token": "sensor",
+      "vocab_index": 75,
+      "probability": 2.41575321288859e-12
+    },
+    {
+      "token": "amplifier",
+      "vocab_index": 76,
+      "probability": 7.776393742957957e-11
+    },
+    {
+      "token": "resonator",
+      "vocab_index": 77,
+      "probability": 1.1807830198338959e-12
+    },
+    {
+      "token": "transducer",
+      "vocab_index": 78,
+      "probability": 2.013610852045495e-13
+    },
+    {
+      "token": "accelerator",
+      "vocab_index": 79,
+      "probability": 3.4292598859555926e-12
+    },
+    {
+      "token": "collider",
+      "vocab_index": 80,
+      "probability": 4.3648887474023524e-11
+    },
+    {
+      "token": "wave",
+      "vocab_index": 81,
+      "probability": 1.5899050146236735e-10
+    },
+    {
+      "token": "field",
+      "vocab_index": 82,
+      "probability": 0.0006329135894328295
+    },
+    {
+      "token": "vacuum",
+      "vocab_index": 83,
+      "probability": 1.7163059457142182e-10
+    },
+    {
+      "token": "lattice",
+      "vocab_index": 84,
+      "probability": 0.1055563877237091
+    },
+    {
+      "token": "ensemble",
+      "vocab_index": 85,
+      "probability": 0.271305445387696
+    },
+    {
+      "token": "manifold",
+      "vocab_index": 86,
+      "probability": 0.00360592607587468
+    },
+    {
+      "token": "medium",
+      "vocab_index": 87,
+      "probability": 0.07953882688481062
+    },
+    {
+      "token": "plasma",
+      "vocab_index": 88,
+      "probability": 0.0033098800749256168
+    },
+    {
+      "token": "condensate",
+      "vocab_index": 89,
+      "probability": 0.3410100529334574
+    },
+    {
+      "token": "crystal",
+      "vocab_index": 90,
+      "probability": 0.004788634467498329
+    },
+    {
+      "token": "conductor",
+      "vocab_index": 91,
+      "probability": 0.015025447909503517
+    },
+    {
+      "token": "insulator",
+      "vocab_index": 92,
+      "probability": 0.17522636007939776
+    },
+    {
+      "token": "semiconductor",
+      "vocab_index": 93,
+      "probability": 4.267397212281416e-08
+    },
+    {
+      "token": "state",
+      "vocab_index": 94,
+      "probability": 1.4963235424678277e-12
+    },
+    {
+      "token": "system",
+      "vocab_index": 95,
+      "probability": 2.5976306476551996e-15
+    },
+    {
+      "token": "eigenstate",
+      "vocab_index": 96,
+      "probability": 4.855026923235312e-14
+    },
+    {
+      "token": "wavefunction",
+      "vocab_index": 97,
+      "probability": 5.0413873590692937e-14
+    },
+    {
+      "token": "hamiltonian",
+      "vocab_index": 98,
+      "probability": 1.2714751915714603e-12
+    },
+    {
+      "token": "operator",
+      "vocab_index": 99,
+      "probability": 6.871799685466655e-11
+    },
+    {
+      "token": "observable",
+      "vocab_index": 100,
+      "probability": 1.1131282282402262e-10
+    },
+    {
+      "token": "lagrangian",
+      "vocab_index": 101,
+      "probability": 3.270444913662565e-11
+    },
+    {
+      "token": "propagator",
+      "vocab_index": 102,
+      "probability": 8.929357655313872e-12
+    },
+    {
+      "token": "spinor",
+      "vocab_index": 103,
+      "probability": 1.4295282020619398e-12
+    },
+    {
+      "token": "eigenfunction",
+      "vocab_index": 104,
+      "probability": 1.2825425324356325e-12
+    },
+    {
+      "token": "wavepacket",
+      "vocab_index": 105,
+      "probability": 6.725656585135106e-13
+    },
+    {
+      "token": "register",
+      "vocab_index": 106,
+      "probability": 8.587115546095836e-13
+    },
+    {
+      "token": "qudit",
+      "vocab_index": 107,
+      "probability": 2.0199973930966617e-13
+    },
+    {
+      "token": "ket",
+      "vocab_index": 108,
+      "probability": 6.475955866538751e-13
+    },
+    {
+      "token": "superposition",
+      "vocab_index": 109,
+      "probability": 5.984020709896762e-11
+    },
+    {
+      "token": "entanglement",
+      "vocab_index": 110,
+      "probability": 3.2805616654197144e-14
+    },
+    {
+      "token": "decoherence",
+      "vocab_index": 111,
+      "probability": 1.87936334558098e-15
+    },
+    {
+      "token": "tunneling",
+      "vocab_index": 112,
+      "probability": 3.7139508192982236e-13
+    },
+    {
+      "token": "interference",
+      "vocab_index": 113,
+      "probability": 1.510359920735168e-14
+    },
+    {
+      "token": "diffraction",
+      "vocab_index": 114,
+      "probability": 5.194460148033022e-11
+    },
+    {
+      "token": "collapse",
+      "vocab_index": 115,
+      "probability": 3.591288773357749e-12
+    },
+    {
+      "token": "scattering",
+      "vocab_index": 116,
+      "probability": 1.8142602239853244e-12
+    },
+    {
+      "token": "emission",
+      "vocab_index": 117,
+      "probability": 4.196535769736093e-11
+    },
+    {
+      "token": "absorption",
+      "vocab_index": 118,
+      "probability": 3.822269901539706e-12
+    },
+    {
+      "token": "excitation",
+      "vocab_index": 119,
+      "probability": 3.0884869594734894e-14
+    },
+    {
+      "token": "relaxation",
+      "vocab_index": 120,
+      "probability": 1.3652546143258566e-10
+    },
+    {
+      "token": "resonance",
+      "vocab_index": 121,
+      "probability": 2.7561766874601966e-12
+    },
+    {
+      "token": "oscillation",
+      "vocab_index": 122,
+      "probability": 3.038171483887732e-09
+    }
+  ]
+}

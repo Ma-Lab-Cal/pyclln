@@ -1,0 +1,39 @@
+{
+  "task": "nonlinear_regression",
+  "run": "noisy_chip3",
+  "condition": "noisy",
+  "metric": "test_mse",
+  "result": {
+    "test_mse": 1.81e-05
+  },
+  "hyperparameters": {
+    "rule": "contrastive coupled learning (free solve -> output nudged by eta toward target -> contrastive gate update)",
+    "gamma": 0.4,
+    "eta": 1.0,
+    "clamp_res_ohm": 0.01,
+    "vminus": 0.0,
+    "vplus": 0.45,
+    "vg_init": "3.0 V (fixed)",
+    "epochs": 25000,
+    "read_noise_rel": 0.005
+  },
+  "network": {
+    "edges": 32,
+    "device": "NMOS",
+    "structure": "4x4 NMOS input-output fully-connected network, coupled learning; single analog output node.",
+    "topology_file": "reg_solution.npy (reference trained gate vector)"
+  },
+  "noise": {
+    "model": "1x device mismatch + read noise",
+    "vth_sigma_V": 0.01,
+    "beta_sigma": 0.005,
+    "note": "per-device threshold-voltage mismatch (sigma=10 mV) and per-device drive-strength (kp) mismatch (sigma=0.5%), fixed per chip; free and clamp are electrically-separate device sets; plus a canonical Gaussian read-noise stream on every measurement (training and inference).",
+    "chip_index": 3,
+    "chip_file": "../../chips/chip_3.npz"
+  },
+  "artifacts": {
+    "curve": "curve.npz",
+    "gates": "gates.npz",
+    "chip": "../../chips/chip_3.npz"
+  }
+}

@@ -1,0 +1,33 @@
+{
+    "task": "ionosphere",
+    "run": "clean",
+    "condition": "clean",
+    "metric": "test_accuracy",
+    "result": {
+        "test_acc": 0.971831,
+        "epoch": 50,
+        "correct": "69/71"
+    },
+    "hyperparameters": {
+        "rule": "contrastive coupled learning (free solve -> multiclass hinge clamp -> contrastive gate update)",
+        "gamma": 4.0,
+        "delta": 0.01,
+        "margin": 0.01,
+        "epochs": 50,
+        "vg_init": "2.0 V (fixed, non-contrived), clip [0.4,8.0]",
+        "input_scale_V": 0.8,
+        "operating_point": "inputs +-0.8 V, fixed gate init 2.0 V",
+        "read_noise_rel": 0.005
+    },
+    "network": {
+        "edges": 147,
+        "device": "NMOS, gate referenced to drain, body floating",
+        "structure": "34 inputs (scaled +-0.8 V) -> 5 hidden -> 2 outputs; 68 input->output + 68 input->hidden (uniform round-robin, label-independent) + 10 hidden->output + 1 output<->output lateral. Purely input-driven, no supply rail.",
+        "topology_file": "topology_147.npz"
+    },
+    "noise": null,
+    "artifacts": {
+        "curve": "curve.npz",
+        "gates": "gates.npz"
+    }
+}

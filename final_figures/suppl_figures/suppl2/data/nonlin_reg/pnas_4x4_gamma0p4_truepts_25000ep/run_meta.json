@@ -1,0 +1,81 @@
+{
+  "script": "nonlin_reg/nonlin_reg_trainer.py",
+  "script_name": "nonlin_reg_trainer.py",
+  "argv": [
+    "nonlin_reg/nonlin_reg_trainer.py",
+    "--side",
+    "4",
+    "--epochs",
+    "25000",
+    "--gamma",
+    "0.4",
+    "--eta",
+    "1.0",
+    "--solver",
+    "klu",
+    "--vminus",
+    "0.0",
+    "--vplus",
+    "0.45",
+    "--mse-stop",
+    "-1",
+    "--init",
+    "uniform",
+    "--vg-init-lo",
+    "3.0",
+    "--vg-init-hi",
+    "3.0",
+    "--seed",
+    "0"
+  ],
+  "timestamp": "2026-03-27T13:45:42.127069",
+  "variant": "nonlin_reg_4x4_alter_ald1106_single_output",
+  "backend": "shared",
+  "solver": "klu",
+  "seed": 0,
+  "grid_side": 4,
+  "epochs": 25000,
+  "gamma": 0.4,
+  "eta": 1.0,
+  "dataset": {
+    "vins": [
+      0.0005,
+      0.0628,
+      0.1251,
+      0.1873,
+      0.2479,
+      0.3118,
+      0.3724,
+      0.4347
+    ],
+    "vous": [
+      0.1088,
+      0.1472,
+      0.1872,
+      0.2256,
+      0.2649,
+      0.3041,
+      0.3041,
+      0.3041
+    ]
+  },
+  "rails": {
+    "vminus": 0.0,
+    "vplus": 0.45
+  },
+  "node_map": {
+    "out": 11,
+    "vminus": 6,
+    "vplus": 8,
+    "vin": 16
+  },
+  "init": {
+    "kind": "uniform",
+    "vg_init_lo": 3.0,
+    "vg_init_hi": 3.0,
+    "vg_init_value": 1.5
+  },
+  "shuffle": false,
+  "clamp_res": 1.0,
+  "mse_stop": -1.0
+}

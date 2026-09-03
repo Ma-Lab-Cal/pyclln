@@ -1,0 +1,13 @@
+{
+  "test_acc": 0.8732394366197183,
+  "endpoint_epoch": 2,
+  "chip": null,
+  "gamma": 4.0,
+  "delta": 0.01,
+  "margin": 0.01,
+  "epochs": 2,
+  "seed": 0,
+  "edges": 147,
+  "device": "NMOS, gate referenced to drain, body floating",
+  "update_rule": "contrastive gate update dVg = -gamma*(dVc^2 - dVf^2)"
+}

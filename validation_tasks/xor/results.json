@@ -1,0 +1,33 @@
+{
+ "task": "XOR (4x4 differential NMOS input-output fully-connected network, coupled learning)",
+ "metric": "solves XOR (all 4 input cases correct at the differential output)",
+ "runs": {
+  "clean": {
+   "solves": true,
+   "solve_acc": 1.0
+  },
+  "noisy_chip1": {
+   "solves": false,
+   "final_acc_noisefree": 0.5
+  },
+  "noisy_chip2": {
+   "solves": false,
+   "final_acc_noisefree": 0.5
+  },
+  "noisy_chip3": {
+   "solves": false,
+   "final_acc_noisefree": 0.5
+  }
+ },
+ "headline": "clean network solves XOR; the device-mismatch chips are not claimed to solve (read noise flips the near-threshold differential output; noise-free eval of the final gates scores 0.5)",
+ "hyperparameters": {
+  "gamma": 0.3,
+  "eta": 0.5,
+  "clamp_res_ohm": 0.01,
+  "vminus": 0.11,
+  "vplus": 0.33
+ },
+ "noise_model": "1x device-mismatch model: per-device VTO offset (sigma 10 mV) + per-device drive-strength/kp factor (sigma 0.5%), fixed per chip (shipped as chip_1/2/3.npz, data only); free & clamp independently mismatched; plus read noise (sigma = 0.5% of the input full scale).",
+ "validation": "ngspice DC operating-point solve (free + clamped phases)",
+ "data_layout": "runs/{clean,noisy_chip1,noisy_chip2,noisy_chip3}/ each with run_meta.json + curve.npz + gates.npz (+ chip.npz for noisy)"
+}

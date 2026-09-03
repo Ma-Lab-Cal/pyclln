@@ -1,0 +1,131 @@
+{
+  "task": "Physics language model — autoregressive next-token generation of quantum-physics sentences on a CLLN NMOS input-output fully-connected network, trained end-to-end on real ngspice. Reduced 122-token vocabulary (plus a <BOS> start marker; 123 symbols); 4 grammatical shapes including questions.",
+  "network": {
+    "edges": 13664,
+    "structure": "122 output branches x 112 gate inputs, input-output fully-connected NMOS network. Input = 7-token context x 16-D SciBERT-FA embedding = 112 gate voltages; output = 122 physical branch drain voltages, read as next-token logits via a masked softmax (123 symbols = 122 vocabulary tokens + a masked <BOS>).",
+    "vocab_size": 123,
+    "device": "NMOS (VTO=0.75 V) + series resistance, gate floor 0.4 V; input-output fully-connected network (one shared drain node per branch)",
+    "context_len": 7,
+    "embedding": "SciBERT frozen-adapter 16-D (scibert_fa16.json), FactorAnalysis refit for the 122-token vocabulary (plus <BOS>)",
+    "input_scale": "gate inputs encoded to [0.0, 0.45] V"
+  },
+  "corpus": {
+    "shapes": 4,
+    "shape_list": [
+      "measure-of",
+      "has-in",
+      "shows-in",
+      "question (what-is)"
+    ],
+    "sentence_openers": 7,
+    "openers": [
+      "the",
+      "a",
+      "an",
+      "this",
+      "that",
+      "each",
+      "every"
+    ],
+    "measure_of": "[det] [apparatus] measures [property] of the [particle] .",
+    "has_in": "[det] [particle] has [property] in the [medium] .",
+    "shows_in": "[det] [quantum-state] shows [outcome] in the [medium] .  (also short form: [det] [state] shows [outcome] .)",
+    "question": "what is the [head] ?   (interrogative; exercises the ? / what / is tokens)",
+    "design": "Four grammatical shapes (measure-of, has-in, shows-in, what-is question). The subject determiner spans all 7 openers (the/a/an/this/that/each/every); object determiners are fixed to 'the' (removes the autoregressive a/an-agreement trap). The corpus is 6998 unique valid sentences (5762 train + 1236 test), all grammatical.",
+    "examples": [
+      "what is the insulator ?",
+      "a qudit shows entanglement in the insulator .",
+      "every resonator measures voltage of the qubit .",
+      "that fermion has charge in the condensate .",
+      "this interferometer measures charge of the proton ."
+    ],
+    "data_splits": {
+      "train_pool_sentences": 5762,
+      "presented_training_windows_per_epoch": 52604,
+      "test_pool_sentences": 1236,
+      "available_test_windows": 9654,
+      "fixed_test_windows_reported": 1400,
+      "split_names": [
+        "train",
+        "test"
+      ],
+      "note": "The fixed test-window sample is reused at every epoch and never contributes to gate-voltage updates."
+    }
+  },
+  "operating_point": "readout temperature T=0.0006 (validity-max). Generation-vs-training temperatures differ (train T=0.0025).",
+  "generation_standard": "STANDARD 1000-sentence test = autoregressive next-token generation with mixed openers (per-sentence uniform over the/a/an/this/that/each/every, a|an agreement-correct), readout T=0.0006.",
+  "headline": {
+    "clean_validity": 1.0,
+    "clean_validity_std": 0.0,
+    "clean_validity_runs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "clean_validity_T001": 0.999,
+    "clean_novel_rate": 0.572,
+    "clean_unique_valid_per_1000": 695,
+    "endpoint_epoch": 12,
+    "per_shape_validity": {
+      "measure-of": 1.0,
+      "has-in": 1.0,
+      "shows-in": 1.0,
+      "question": 1.0
+    },
+    "shape_balance": {
+      "measure-of": 0.25,
+      "has-in": 0.25,
+      "shows-in": 0.25,
+      "question": 0.25
+    },
+    "note": "Device-faithful (real ngspice .op free solves, five 1000-sentence batches): 1.0000 clean validity, 4 distinct grammatical shapes including questions, 7 distinct sentence openers."
+  },
+  "argmax_curve_test_T0006": {
+    "ep4": 0.9933,
+    "ep6": 0.998,
+    "ep8": 1.0,
+    "ep10": 1.0,
+    "ep12": 1.0
+  },
+  "noise_table": {
+    "description": "Noise-resident 1x model: each chip = a fixed per-transistor Vth-mismatch fingerprint (sigma=10 mV = 1.3% of VTO) + per-device drive-strength (kp) mismatch (sigma=0.5%) + read noise (sigma=2.25 mV = 0.5% of the 0.45 V input rail), whole-training on real ngspice. Device-faithful mixed-opener validity (real ngspice, five 1000-sentence batches, T=0.0006).",
+    "clean": {
+      "validity": 1.0,
+      "std": 0.0,
+      "endpoint_epoch": 12
+    },
+    "chip_1": {
+      "validity": 0.9986,
+      "std": 0.0005,
+      "endpoint_epoch": 12
+    },
+    "chip_2": {
+      "validity": 0.997,
+      "std": 0.0011,
+      "endpoint_epoch": 12
+    },
+    "chip_3": {
+      "validity": 0.9982,
+      "std": 0.001,
+      "endpoint_epoch": 12
+    },
+    "noise_mean": 0.9979,
+    "noise_cost": "noise costs only ~0.2% (clean 1.0000 -> noise-mean 0.9979); 1x model = per-device Vth + drive-strength mismatch + read noise -> highly noise-robust."
+  },
+  "training": {
+    "rule": "per-sample contrastive coupled learning, strict batch-1 SGD, one-hot CE target, K=1: free solve (real ngspice) -> clamp outputs to the CE target -> contrastive gate update per edge, clip [0.4, 8.0]",
+    "recipe": {
+      "gamma": 0.1,
+      "delta": 0.035,
+      "temp_train": 0.0025,
+      "epochs": 12,
+      "endpoint": "ep12",
+      "init": "non-contrived random U(2.5,5) init (untrained = chance)"
+    },
+    "balanced_sampling": "the question family is upweighted during sampling so it gets enough exposure (~700 samples) relative to the high-fanout declarative shapes.",
+    "simulator": "FREE phase = real ngspice .op (in-circuit); CLAMP phase = clamped-output solve."
+  },
+  "status": "Reduced-vocab CLLN language model: clean 1.0000 + 3 noise chips (mean 0.9979), device-faithful on real ngspice; 13,664 edges, 122-token vocabulary (plus <BOS>), 4 grammatical shapes including questions."
+}
